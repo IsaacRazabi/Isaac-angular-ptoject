@@ -1,3 +1,1 @@
----
-permalink: /index.html
----
+[Contribution guidelines for this project](src/index.html)
