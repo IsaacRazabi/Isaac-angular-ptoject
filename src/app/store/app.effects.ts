@@ -34,7 +34,7 @@ export class AppEffects {
       ofType(LOAD_ITEM),
       tap(() => console.log('Effects: load item ==> service')),
       switchMap((action) =>
-        this.itemService.getById(action.itemId).pipe(
+        this.itemService.getById(action.itemId,action.itemId).pipe(
           tap(() => console.log('Effects: Got item from service ===> Reducer')),
           map((item) => ({
             type: LOADED_ITEM,
@@ -55,7 +55,7 @@ export class AppEffects {
     return this.actions$.pipe(
       ofType(REMOVE_ITEM),
       switchMap((action) =>
-        this.itemService.remove(action.itemId).pipe(
+        this.itemService.remove(action.itemId,action.itemId).pipe(
           tap(() => console.log('Effects: Item removed by service ===> Reducer')),
           map(() => ({
             type: REMOVED_ITEM,
