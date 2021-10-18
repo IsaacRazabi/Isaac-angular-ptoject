@@ -1,1 +1,3 @@
-Isaac Razabi
+---
+permalink: /index.html
+---
